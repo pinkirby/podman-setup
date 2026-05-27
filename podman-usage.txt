@@ -1,0 +1,12 @@
+
+# build the image
+podman build -t [name-of-image] [path-to-container-file]
+
+# run the container
+podman run -d --name [name-of-container-instance] --network=host --user 0:0 --volume /root/.ssh:/root/.ssh [name-of-image]
+
+# enter the container
+podman exec -it [name-of-container-instance] zsh
+
+
+TODO: Timezone to new york
