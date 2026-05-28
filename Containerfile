@@ -17,10 +17,10 @@ RUN rm nvim-linux-x86_64.tar.gz
 
 RUN sh -c "$(curl -fsLS get.chezmoi.io)" -- -b /usr/local/bin
 
-RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && local-gen
+RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && locale-gen
 
 ENV LANG=en_US.UTF-8
-ENV LC_ALL=en_US.
+ENV LC_ALL=en_US.UTF-8
 
 ENV TERM=xterm-256-color256
 
